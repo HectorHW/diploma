@@ -1,0 +1,27 @@
+%шрифты
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+\setmainfont{Times New Roman}
+
+%поля страницы
+\usepackage[left=2cm,right=2cm,
+top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+\sloppy
+
+%текст
+\parindent 1.25cm
+\linespread{1.5}
+
+% формат заголовочков
+\titleformat{\section}[block]{\hspace{1.25cm}\bfseries}{\arabic{section}. }{0cm}{}
+\titlespacing{\section}{0cm}{0pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+\titleformat{\subsection}[block]{\hspace{1.25cm}\bfseries}{\arabic{section}.\arabic{subsection}. }{0cm}{}
+
+
+%формат списков
+\setlist{nosep}
+\setlist[enumerate]{wide=\parindent}
+\setlist[itemize]{wide=\parindent}
+\renewcommand\labelitemi{-}
+
+%\setlength{\parskip}{0pt}

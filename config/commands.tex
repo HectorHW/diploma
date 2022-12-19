@@ -1,0 +1,13 @@
+\newenvironment{nscenter}
+{\parskip=0pt\par\nopagebreak\centering}
+{\par\noindent\ignorespacesafterend}
+
+\newcommand{\specialsection}[1]{
+	\phantomsection
+	\begin{nscenter}
+		\fontsize{14}{14}\textbf{#1}
+	\end{nscenter}
+		
+	\addcontentsline{toc}{section}{#1}
+	\markboth{#1}{#1}%
+}
