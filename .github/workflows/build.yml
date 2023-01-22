@@ -12,11 +12,12 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
 
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
+      - name: Install fonts and compile LaTeX document
+        uses: xu-cheng/texlive-action/full@v1
         with:
-          root_file: main.tex
-          latexmk_use_xelatex: true
+          run: |
+            apk --no-cache add msttcorefonts-installer fontconfig && update-ms-fonts && fc-cache -f
+            xelatex -synctex=1 -interaction=nonstopmode main.tex
 
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
