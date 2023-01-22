@@ -24,3 +24,10 @@ jobs:
         with:
           name: PDF
           path: main.pdf
+
+      - name: Put pdf file in Releases
+        uses: softprops/action-gh-release@v1
+        with:
+          body: Compiled pdf for ${{ github.sha }}
+          files: |
+            main.pdf
