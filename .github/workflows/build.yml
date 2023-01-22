@@ -27,6 +27,7 @@ jobs:
 
       - name: Put pdf file in Releases
         uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           body: Compiled pdf for ${{ github.sha }}
           files: |
