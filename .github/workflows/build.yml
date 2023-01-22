@@ -17,7 +17,7 @@ jobs:
         with:
           run: |
             apk --no-cache add msttcorefonts-installer fontconfig && update-ms-fonts && fc-cache -f
-            xelatex -synctex=1 -interaction=nonstopmode main.tex
+            xelatex -interaction=nonstopmode main.tex
 
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
