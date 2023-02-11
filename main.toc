@@ -1,0 +1,5 @@
+\contentsline {section}{ВВЕДЕНИЕ}{2}{}%
+\contentsline {section}{\numberline {1}Трассировка}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Статическая инструментация}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Динамическая инструментация}{3}{}%
+\contentsline {section}{ЗАКЛЮЧЕНИЕ}{4}{}%
