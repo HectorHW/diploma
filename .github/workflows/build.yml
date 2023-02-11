@@ -32,3 +32,15 @@ jobs:
           body: Compiled pdf for ${{ github.sha }}
           files: |
             main.pdf
+
+      - name: Pushes test file
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_file: "main.pdf"
+          destination_repo: "HectorHW/diploma-releases"
+          destination_folder: "release-pdf"
+          user_email: "vsredkin01@gmail.com"
+          user_name: "Vladimir Redkin"
+          commit_message: "upload pdf"
