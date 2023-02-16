@@ -3,3 +3,7 @@
 *.synctex.gz
 *.aux
 *.txss2
+*.bbl
+*.bcf
+*.blg
+main.run.xml
