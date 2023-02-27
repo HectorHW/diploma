@@ -1,7 +1,9 @@
 \renewcommand{\cfttoctitlefont}{\hfill\bfseries}
+
 \renewcommand{\contentsname}{\begin{center}
 		\fontsize{14}{14}\MakeUppercase{оглавление}
 	\end{center}}
+
 \renewcommand{\cftsecleader}{\cftdotfill{1}} %  частота точек
 \renewcommand{\cftsubsecleader}{\cftdotfill{1}} %  частота точек
 \renewcommand{\cftsecfont}{\normalfont} % обычный шрифт (не жирный) для секций в оглавлении
@@ -10,6 +12,10 @@
 \renewcommand{\cftaftertoctitleskip}{5pt} % должно влиять на расстояние после названия оглавления
 
 \renewcommand{\cftbeforesecskip}{7pt} % расстояние между строчками оглавления. Добавляется к стандартному
+
+\cftsetindents{subsection}{0pt}{24pt}
+\cftsetindents{section}{0pt}{24pt}
+
 
 \tableofcontents
 \newpage
