@@ -4,7 +4,7 @@
 \newfontfamily\cyrillicfont{Times New Roman}
 
 %поля страницы
-\usepackage[left=2cm,right=2cm,
+\usepackage[left=3cm,right=2cm,
 top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
 \sloppy
 
@@ -20,8 +20,10 @@ top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
 
 %формат списков
 \setlist{nosep}
-\setlist[enumerate]{wide=\parindent}
+\setlist[enumerate]{wide=\parindent, label=\arabic*)}
 \setlist[itemize]{wide=\parindent}
-\renewcommand\labelitemi{-}
+\renewcommand\labelitemi{--}
 
-%\setlength{\parskip}{0pt}
+\renewcommand\UrlFont{\rmfamily} % стандартный шрифт для ссылок
+
+\renewcommand{\mkgostheading}[1][]{\mkbibnormal{#1}} 
