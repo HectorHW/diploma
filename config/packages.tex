@@ -11,4 +11,14 @@
 
 \usepackage{tocloft} % формат оглавлений, фигур и тд
 
-\usepackage[style=numeric, sorting=none, backend=biber]{biblatex} % составление списка литературы, цитаты в виде цифр
+\usepackage{url} % настройка оформления ссылок
+
+\usepackage[
+style=gost-numeric, 
+sorting=none,
+backend=biber,
+language=auto,
+autolang=other,
+doi=false,% Показывать или нет ссылки на DOI
+isbn=false
+]{biblatex} % составление списка литературы, цитаты в виде цифр
