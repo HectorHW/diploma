@@ -11,7 +11,10 @@
 
 \renewcommand{\cftaftertoctitleskip}{5pt} % должно влиять на расстояние после названия оглавления
 
-\renewcommand{\cftbeforesecskip}{7pt} % расстояние между строчками оглавления. Добавляется к стандартному
+\renewcommand{\cftbeforesecskip}{0pt} % расстояние между строчками оглавления. Добавляется к стандартному
+
+\renewcommand\cftsecafterpnum{\vskip0pt}
+\renewcommand\cftsubsecafterpnum{\vskip0pt}
 
 \cftsetindents{subsection}{0pt}{24pt}
 \cftsetindents{section}{0pt}{24pt}
