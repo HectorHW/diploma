@@ -3,6 +3,7 @@
 {\par\noindent\ignorespacesafterend}
 
 \newcommand{\specialsection}[1]{
+	\clearpage
 	\phantomsection
 	\begin{nscenter}
 		\fontsize{14}{14}\textbf{#1}
@@ -11,3 +12,5 @@
 	\addcontentsline{toc}{section}{#1}
 	\markboth{#1}{#1}%
 }
+
+\AddToHook{cmd/section/before}{\clearpage}
