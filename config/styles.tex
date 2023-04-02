@@ -26,4 +26,14 @@ top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
 
 \renewcommand\UrlFont{\rmfamily} % стандартный шрифт для ссылок
 
-%\renewcommand{\mkgostheading}[1][]{\mkbibnormal{#1}} 
+% формат библиографии
+\defbibenvironment{bibliography}
+{\enumerate[label=\arabic*)]
+	{}
+	{\setlength{\leftmargin}{0pt}%
+		\setlength{\itemindent}{1.25cm}%
+		\setlength{\itemsep}{\bibitemsep}%
+		\setlength{\parsep}{\bibparsep}}%
+}
+{\endenumerate}
+{\item\addspace}

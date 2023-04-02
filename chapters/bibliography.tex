@@ -1,3 +1,12 @@
 \specialsection{СПИСОК ЛИТЕРАТУРЫ}\label{sec:sources}
 
+\setlength{\biblabelsep}{\labelsep} \setlength{\bibitemsep}{-0.5\parsep} \setlength{\bibparsep}{1.0ex}
+
+\DeclareFieldFormat{title}{#1}
+\DeclareFieldFormat{citetitle}{#1}
+\DeclareFieldFormat{}{#1}
+
+\begingroup
+\let\itshape\upshape
+
 \printbibliography[heading=none]
