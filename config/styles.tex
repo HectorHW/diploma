@@ -18,6 +18,9 @@ top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
 \titleformat{\subsection}[block]{\hspace{1.25cm}\bfseries}{\arabic{section}.\arabic{subsection}. }{0cm}{}
 \titlespacing{\subsection}{0pt}{0pt}{0pt}
 
+\titleformat{\subsubsection}[block]{\hspace{1.25cm}\bfseries}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}. }{0cm}{}
+\titlespacing{\subsubsection}{0pt}{0pt}{0pt}
+
 %формат списков
 \setlist{nosep}
 \setlist[enumerate]{wide=\parindent, label=\arabic*)}
@@ -37,3 +40,8 @@ top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
 }
 {\endenumerate}
 {\item\addspace}
+
+% формат подписей у изображений
+\captionsetup[figure]{name={Рисунок },labelsep=endash}
+% не добавлять отступ после подписи
+\captionsetup{belowskip=-12pt}
