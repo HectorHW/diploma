@@ -1,0 +1,68 @@
+@startuml arch
+skinparam dpi 300
+skinparam monochrome true
+
+class UI {
+    tick()
+}
+
+UI --> Library
+
+class Fuzzer {
+    - library: Library
+    - mutator: Mutator
+    - tracer: Evaluator
+
+
+    + run_once() -> RunResult
+    + add_sample(Sample) -> RunResult
+}
+
+class Library {
+    - items: VectorMap<Trace, Sample>
+    + add_sample(Trace, Sample)
+    + pick_sample() -> Sample
+}
+
+interface Evaluator {
+    + run_sample(Sample) -> Trace
+}
+
+interface Mutator {
+    + mutate_sample(Sample) -> (Sample, MutInfo)
+    + record_feedback(MutInfo)
+}
+
+Fuzzer --> Evaluator
+Fuzzer --> Library
+Fuzzer --> Mutator
+
+Library o-- Sample
+
+class TraceEvaluator {
+    - functions: Vec<usize>
+    - binary: Path
+    + run_sample(Sample) -> Trace
+}
+
+TraceEvaluator -up-|> Evaluator
+
+class SoftmaxMutator {
+    - binary: Vec<BinMutator>
+    - tree: Vec<TreeMutator>
+    - scores: HashMap<String, f64>
+    + mutate_sample(Sample) -> (Sample, MutInfo)
+    + record_feedback(MutInfo)
+}
+
+SoftmaxMutator --|> Mutator
+
+interface BinMutator
+interface TreeMutator
+
+SoftmaxMutator *-- BinMutator
+SoftmaxMutator *-- TreeMutator
+
+
+
+@enduml
