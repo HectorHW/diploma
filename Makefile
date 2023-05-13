@@ -18,3 +18,6 @@ practice:
 	mv practice.pdf practice-pages.pdf
 	pdftk A=practice-titlepage.pdf B=practice-pages.pdf cat A1 B1-end output practice.pdf
 
+.PHONY: code
+code:
+	rustfmt +nightly code/execution.rs
