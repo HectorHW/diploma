@@ -1,5 +1,10 @@
-.PHONY: build
-build:
+
+build: code images build-tex merge
+
+practice: code images build-practice-tex merge-practice
+
+.PHONY: build-tex
+build-tex:
 	xelatex -synctex=1 -interaction=nonstopmode main.tex
 	biber main
 	xelatex -synctex=1 -interaction=nonstopmode main.tex
@@ -9,15 +14,23 @@ build:
 images:
 	plantuml images/*.puml
 
-.PHONY: practice
-practice:
+.PHONY: build-practice-tex
+build-practice-tex:
 	xelatex -synctex=1 -interaction=nonstopmode practice.tex
 	biber practice
 	xelatex -synctex=1 -interaction=nonstopmode practice.tex
 	xelatex -synctex=1 -interaction=nonstopmode practice.tex
+	
+
+.PHONY: merge-practice
+merge-practice:
 	mv practice.pdf practice-pages.pdf
 	pdftk A=practice-titlepage.pdf B=practice-pages.pdf cat A1 B1-end output practice.pdf
 
 .PHONY: code
 code:
 	rustfmt +nightly code/execution.rs
+
+.PHONY: merge
+merge:
+	mv main.pdf diplom.pdf
