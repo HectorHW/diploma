@@ -6,7 +6,7 @@
 *.bbl
 *.bcf
 *.blg
-main.run.xml
+*.run.xml
 *.toc
 *.nav
 *.out
