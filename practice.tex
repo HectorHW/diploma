@@ -1,0 +1,32 @@
+\listfiles
+\documentclass[xetex,a4paper,14pt]{extarticle}
+
+\input{config/packages}
+
+\input{config/styles}
+
+\input{config/commands}
+
+\addbibresource{bibliography.bib}
+
+\begin{document}
+	
+	\input{config/docstyles}
+	
+	% titlepage is externally supplied
+	\setcounter{page}{2}
+	
+	\input{chapters/contents}
+	
+	\input{chapters/practice-introduction}
+	
+	\input{chapters/genes}
+	\input{chapters/tracing}
+	\input{chapters/selection}
+	\input{chapters/program}
+	
+	\input{chapters/practice-conclusion}
+	
+	\input{chapters/bibliography}
+	
+\end{document}
