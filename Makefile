@@ -3,6 +3,11 @@ build: code images build-tex merge
 
 practice: code images build-practice-tex merge-practice
 
+.PHONY: titlepage
+titlepage:
+	xelatex -synctex=1 -interaction=nonstopmode titlepage-main.tex
+	mv titlepage-main.pdf титульный\ лист\ Редькин.pdf
+
 .PHONY: build-tex
 build-tex:
 	xelatex -synctex=1 -interaction=nonstopmode main.tex
