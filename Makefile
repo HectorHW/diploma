@@ -39,3 +39,9 @@ code:
 .PHONY: merge
 merge:
 	mv main.pdf diplom.pdf
+
+.PHONY: extract-antiplagiat
+extract-antiplagiat:
+	pdftk diplom.pdf cat 2-36 output vsredkin-for-antiplagiat.pdf
+
+antiplagiat: build extract-antiplagiat
