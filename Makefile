@@ -45,3 +45,7 @@ extract-antiplagiat:
 	pdftk diplom.pdf cat 2-32 36 output vsredkin-for-antiplagiat.pdf
 
 antiplagiat: build extract-antiplagiat
+
+.PHONY: presentation
+presentation:
+	xelatex -synctex=1 -interaction=nonstopmode presentation.tex
