@@ -42,6 +42,6 @@ merge:
 
 .PHONY: extract-antiplagiat
 extract-antiplagiat:
-	pdftk diplom.pdf cat 2-36 output vsredkin-for-antiplagiat.pdf
+	pdftk diplom.pdf cat 2-32 36 output vsredkin-for-antiplagiat.pdf
 
 antiplagiat: build extract-antiplagiat
