@@ -13,13 +13,8 @@
 \setsansfont{Noto Sans}
 \setmonofont{Noto Sans Mono}
 
-\usepackage{indentfirst}
-\usepackage{enumitem}
-
-
-\setlist{nosep}
-\setlist[enumerate]{wide=\parindent, label=\arabic*)}
-\setlist[itemize]{wide=\parindent, label=--}
+\setbeamertemplate{itemize item}[circle]
+\setbeamertemplate{itemize subitem}[triangle]
 
 \usepackage{ragged2e}
 
@@ -144,7 +139,7 @@
 				
 				\item подаём на вход программе
 				
-				\item ищем segfault
+				\item ищем segfault и интересные образцы
 			\end{itemize}
 			
 		\end{minipage}\begin{minipage}{0.43\textwidth}
@@ -180,6 +175,10 @@
 			
 	\end{frame}
 
+	\begin{frame}[c]{Описание входа}
+		\centering \includegraphics[height=6cm]{grammar.png}
+	\end{frame}
+
 	\begin{frame}[t]{Мутация деревьев}
 		\begin{minipage}{0.5\textwidth}
 			
@@ -193,42 +192,39 @@
 		\end{minipage}
 	\end{frame}
 
-	\begin{frame}[t]{Сбор покрытия}
-		\begin{minipage}{0.5\textwidth}
+	\begin{frame}[c]{Сбор покрытия}
 			
-			\vspace{1.5cm}
+		\centering \includegraphics[width=9cm]{breakpoints.png}
 			
-			\includegraphics[width=5cm]{elf-sym.png}
-			
-		\end{minipage}\begin{minipage}{0.5\textwidth}
-			
-			\vspace{1.5cm}
-			
-			\includegraphics[width=6cm]{breakpoints.png}
-		\end{minipage}
 	\end{frame}
 
-	\begin{frame}[t]{Выбор стратегий}
-		\begin{minipage}{0.5\textwidth}
-			
-			\vspace{1.1cm}
-			
-			\begin{itemize}
-				\item вероятность, соразмерная длине пути для образца
-				
-				\item применение методов для задач многоруких бандитов для выбора мутаторов
-			\end{itemize}
-		
-			
-		\end{minipage}\begin{minipage}{0.5\textwidth}
-			
-			\vspace{1.1cm}
-			\includegraphics[width=5cm]{bandit.png}
-		\end{minipage}
-	\end{frame}
 	
 	\begin{frame}[t]{Интерфейс}
 		\includegraphics[width=12cm]{tui.png}
+	\end{frame}
+
+	\begin{frame}[t]{Результаты}
+		\vspace{1cm}
+		\begin{itemize}
+			\item изучены подходы к генерации данных и трассировке
+			
+			\item разработан фаззер
+			\begin{itemize}
+				\fontsize{11}{15}\selectfont
+				\item использующий грамматику или готовые образцы
+				\item не требующий перекомпиляции или модификации
+			\end{itemize}
+			\item проведены испытания на уязвимых образцах
+		\end{itemize}
+		
+		\vspace{0.6cm}
+		
+		\centering {
+	\setlength{\fboxsep}{0pt}%
+	\setlength{\fboxrule}{1pt}%
+	\fbox{\includegraphics[height=1.8cm]{segfault.png}}	
+	}
+	
 	\end{frame}
 
 	\begin{frame}[c]
