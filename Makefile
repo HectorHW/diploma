@@ -38,7 +38,7 @@ code:
 
 .PHONY: merge
 merge:
-	mv main.pdf diplom.pdf
+	pdftk A=main.pdf B=titlepage-signed.pdf cat B1 A2-end output diplom.pdf
 
 .PHONY: extract-antiplagiat
 extract-antiplagiat:
