@@ -115,12 +115,12 @@
 		
 	\end{frame}
 
-	\begin{frame}[t]{Использованные технологии}
+	\begin{frame}[t]{Технологии, алгоритмы, инструментарий}
 			\vspace{1cm}
 		\begin{itemize}
 			\fontsize{14}{18}
 			\selectfont
-			\item КС грамматики для описания ввода
+			\item КС грамматики для описания ввода % 
 			\item генетические алгоритмы для генерации новых образцов
 			\item ptrace для трассировки программы
 			\item алгоритмы одноруких бандитов для выбора мутаторов
@@ -199,12 +199,43 @@
 	\end{frame}
 
 	
-	\begin{frame}[t]{Интерфейс}
-		\includegraphics[width=12cm]{tui.png}
+	\begin{frame}[t]{Выбор стратегий и образцов}
+		\begin{minipage}{0.55\textwidth}
+			
+			\vspace{1.1cm}
+			
+			\begin{itemize}
+				\item вероятность, соразмерная длине пути для образца
+				
+				\item применение методов для задач многоруких бандитов для выбора мутаторов
+			\end{itemize}
+			
+			
+		\end{minipage}\begin{minipage}{0.45\textwidth}
+			\vspace{1.1cm}
+			\includegraphics[width=5cm]{bandit.png}
+		\end{minipage}
 	\end{frame}
 
-	\begin{frame}[t]{Результаты}
-		\vspace{1cm}
+	\begin{frame}[c]{Испытания}
+		
+		\begin{itemize}
+			\item фаззинг парсера exif -- единственный образец в 21 уникальный краш
+			
+			\item грамматический фаззинг парсера json -- генерация примеров для внесённых уязвимостей
+		\end{itemize}
+		
+		\vspace{0.6cm}
+		
+		\centering {
+			\setlength{\fboxsep}{0pt}%
+			\setlength{\fboxrule}{1pt}%
+			\fbox{\includegraphics[height=1.8cm]{segfault.png}}	
+		}
+	\end{frame}
+
+	\begin{frame}[c]{Результаты}
+		
 		\begin{itemize}
 			\item изучены подходы к генерации данных и трассировке
 			
@@ -216,14 +247,6 @@
 			\end{itemize}
 			\item проведены испытания на уязвимых образцах
 		\end{itemize}
-		
-		\vspace{0.6cm}
-		
-		\centering {
-	\setlength{\fboxsep}{0pt}%
-	\setlength{\fboxrule}{1pt}%
-	\fbox{\includegraphics[height=1.8cm]{segfault.png}}	
-	}
 	
 	\end{frame}
 
